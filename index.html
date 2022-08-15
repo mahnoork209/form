@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MK CREATIONS</title>
+	
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="label">LOG IN</h1>
+		<form class="login_form" action="home.html" method="get" name="form" onsubmit="return validated()"> 
+			<div class="font">Email or Username</div>
+			<input type="text" name="email" placeholder="Username or email">
+			<div id="email_error">Please enter your correct Email or Phone</div>
+			<div class="font font2">Password</div>
+			<input type="password" name="password" placeholder="Your Password">
+			<div id="pass_error">Please add your Password. It should contain atleast 6 characters and there should be alpha numeric character in it as well </div>
+            <p class="form__text">
+                <a href="#" class="form__link">Forget your Password?Click Here</a>
+
+            </p>
+           <label>Remember me
+                <input type="checkbox" checked="checked" name="remember" class="default"> 
+            </label>              
+			<button type="submit">Login</button>
+		</form>
+	</div>	
+	<script src="valid.js">
+function validated() {
+	if (email.value.length < 9) {
+		email.style.border = "1px solid red";
+		email_error.style.display = "block";
+		email.focus();
+		return false;
+	}
+	if (password.value.length < 6) {
+		password.style.border = "1px solid red";
+		pass_error.style.display = "block";
+		password.focus();
+		return false;
+	}
+
+}
+function email_Verify() {
+	if (email.value.length >= 8) {
+		email.style.border = "1px solid silver";
+		email_error.style.display = "none";
+		return true;
+	}
+}
+function pass_Verify() {
+	if (password.value.length >= 5) {
+		password.style.border = "1px solid silver";
+		pass_error.style.display = "none";
+		return true;
+	}
+}</script>
+</body>
+</html>
